@@ -91,10 +91,10 @@ ggplot(df_pivot, aes(x = P, fill = factor(temperature))) +
   theme(panel.border = element_rect(linetype = "solid", color = "black", fill = NA),
         legend.position = "none",
         text = element_text(color = "black", size = 8),
-        axis.text = element_text(color = "black"), #) #,size = 10
+        axis.text = element_text(color = "black"), 
         strip.text.x = element_text(size = 10))
 # saving
-ggsave("degradation_rhlB/final_plots/5prime-profil.png", 
+ggsave("degradation_rhlB/final_plots/P-5prime-profile.png", 
        dpi = 600, width = 6, height = 3, units = "in", bg = "white")
   
 
