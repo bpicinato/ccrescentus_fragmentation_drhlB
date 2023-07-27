@@ -77,8 +77,8 @@ lines = data.frame(temperature = c("X10C", "X30C"),
                    line = c(sum(abs(p_threeprime_10C - 0) < 1e-6, na.rm = T), sum(abs(p_threeprime_30C - 0) < 1e-6, na.rm = T)))
 # labels for facets 
 # https://community.rstudio.com/t/subscripts-and-superscripts-facet-wrap-facet-labels/81072/6
-labels = as_labeller(c(X10C = "10~degree*C", 
-                       X30C = "30~degree*C"), default = label_parsed)
+labels = as_labeller(c(X10C = "Delta*italic(rhlB)^Cc~10~degree*C", 
+                       X30C = "Delta*italic(rhlB)^Cc~30~degree*C"), default = label_parsed)
 # plotting
 ggplot(df_pivot, aes(x = P, fill = factor(temperature))) + 
   geom_histogram(bins = 20, color = "white") + 
