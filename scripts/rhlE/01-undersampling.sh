@@ -72,12 +72,10 @@ for prefix in $prefixes ; do
   
   # 3.1) fiveprime profile
   
-  # generating profile for unpaired reads
   # fwd
   samtools view -@ $threads -h $sampledir/${prefix}"_"$n"reads-sampled.bam" | \
   grep "^@\|YT:Z:UU" | \
   samtools view -@ $threads -h -F 0x10 | \
-  #awk -v OFS="\t" -v FS="\t" '{if(/^@/){print}else{if($1 !~ /_R2$/){print}}}' | \
   grep "^@\|XS:A:+" | \
   samtools view -@ $threads -h -b | \
   bedtools genomecov -5 -strand + -bga -ibam stdin > $fiveprimedir/$prefix"-5primeprofile-fwd.bedgraph"
@@ -85,18 +83,15 @@ for prefix in $prefixes ; do
   samtools view -@ $threads -h $sampledir/${prefix}"_"$n"reads-sampled.bam" | \
   grep "^@\|YT:Z:UU" | \
   samtools view -@ $threads -h -f 0x10 | \
-  #awk -v OFS="\t" -v FS="\t" '{if(/^@/){print}else{if($1 !~ /_R2$/){print}}}' | \
   grep "^@\|XS:A:-" | \
   samtools view -@ $threads -h -b | \
   bedtools genomecov -5 -strand - -bga -ibam stdin > $fiveprimedir/$prefix"-5primeprofile-rev.bedgraph"
   
   # 3.2) threeprime profile
-  # generating profile for unpaired reads
   # fwd
   samtools view -@ $threads -h $sampledir/${prefix}"_"$n"reads-sampled.bam" | \
   grep "^@\|YT:Z:UU" | \
   samtools view -@ $threads -h -F 0x10 | \
-  #awk -v OFS="\t" -v FS="\t" '{if(/^@/){print}else{if($1 ~ /_R2$/){print}}}' | 
   grep "^@\|XS:A:+" | \
   samtools view -@ $threads -h -b | \
   bedtools genomecov -3 -strand + -bga -ibam stdin > $threeprimedir/$prefix"-3primeprofile-fwd.bedgraph"
@@ -104,7 +99,6 @@ for prefix in $prefixes ; do
   samtools view -@ $threads -h $sampledir/${prefix}"_"$n"reads-sampled.bam" | \
   grep "^@\|YT:Z:UU" | \
   samtools view -@ $threads -h -f 0x10 | \
-  #awk -v OFS="\t" -v FS="\t" '{if(/^@/){print}else{if($1 ~ /_R2$/){print}}}' | 
   grep "^@\|XS:A:-" | \
   samtools view -@ $threads -h -b | \
   bedtools genomecov -3 -strand - -bga -ibam stdin > $threeprimedir/$prefix"-3primeprofile-rev.bedgraph"
