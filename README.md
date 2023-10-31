@@ -9,4 +9,6 @@ Briefly, `01-undersampling.sh` ramdomly samples n reads (n being the amount of r
 
 This repository is part of study conducted primarily by Hugo Libonati de Araújo and Dr. Marilis do Valle Marques.
 
-If you use any content of this repository, please cite [The DEAD-box RNA helicase RhlB is required for efficient RNA processing at low temperature in *Caulobacter*](https://journals.asm.org/doi/10.1128/spectrum.01934-23).
+If you use any content of this repository, please cite:
+
+[Araújo, H. L.; Picinato, B. A.; Lorenzetti, A. P. R.; Muthunayake, N. S.; Rathnayaka-Mudiyanselage, I. W.; dos Santos, N. M.; Schrader, J.; Koide, T.; Marques, M.V. 2023. The DEAD-box RNA helicase RhlB is required for efficient RNA processing at low temperature in *Caulobacter*. Micobiology Spectrum](https://journals.asm.org/doi/10.1128/spectrum.01934-23).
