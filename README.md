@@ -8,3 +8,5 @@ Scripts used in calculating fragmentation excess in *Caulobacter crescentus* NA1
 Briefly, `01-undersampling.sh` ramdomly samples n reads (n being the amount of reads uniquely aligned in the library with less aligned reads among the samples) from BAM alingment files and generate 5' and 3' profiles as in https://github.com/alanlorenzetti/frtc; this was used to guarantee all libraries had the same number of alinged reads for further analysis. Script `02-calculatingP_plotting.R` calculates the proportion P for all genomic positions using the undersampled files, plots the resulting histograms and calculates the BER.
 
 This repository is part of study conducted primarily by Hugo Libonati de Araújo and Dr. Marilis do Valle Marques.
+
+If you use any content of this repository, please cite [The DEAD-box RNA helicase RhlB is required for efficient RNA processing at low temperature in *Caulobacter*](https://journals.asm.org/doi/10.1128/spectrum.01934-23).
